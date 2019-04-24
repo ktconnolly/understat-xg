@@ -50,7 +50,7 @@ def create_heatmap(x_coordinates, y_coordinates):
     plt.plot([17, 17], [78, 22], color='w', linewidth=3)
 
     # Add penalty spot
-    plt.plot(11.5, 50, 'wo')
+    plt.plot(11.5, 50, 'wo', linewidth=3)
 
     plt.axis('off')
     plt.title('Title', fontsize=14)
