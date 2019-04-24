@@ -53,7 +53,7 @@ def create_heatmap(x_coordinates, y_coordinates):
     plt.plot(11.5, 50, 'wo')
 
     plt.axis('off')
-    plt.title('Title')
+    plt.title('Title', fontsize=14)
     plt.subplots_adjust(left=0.1, bottom=0.1, right=0.9, top=0.9)
     plt.show()
 
