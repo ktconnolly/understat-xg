@@ -25,7 +25,7 @@ Penalties and own goals will be excluded.
 python match.py match_data.csv
 ```
 
-Matplotlib heatmaps for 250,000 attempts on goal (excluding penalties).
+Below are heatmaps for 250,000 attempts on goal.
 
 ![](figures/all_shots.png)
 ![](figures/head.png)
