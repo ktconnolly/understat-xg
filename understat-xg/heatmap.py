@@ -36,8 +36,11 @@ def get_coordinates(filename):
 
 
 def create_heatmap(x_coordinates, y_coordinates):
-    plt.hist2d(x_coordinates, y_coordinates,
-               bins=(100, 100), range=np.array([(0, 100), (0, 100)]))
+    plt.hist2d(
+        x_coordinates, y_coordinates,
+        bins=(100, 100),
+        range=np.array([(0, 100), (0, 100)])
+    )
 
     # Plot six yard box
     plt.plot([0, 6], [63, 63], color='w', linewidth=3)
