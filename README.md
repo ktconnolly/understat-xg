@@ -1,6 +1,6 @@
 # Understat xG
 
-### Season xG data
+### Season xG Data
 
 To get xG values for every match in a season pass the league ID folowed by season year as args.
 ```
@@ -11,7 +11,7 @@ Available seasons are from 2014 to present.
 
 
 
-### Match xG data
+### Match Shot Data
 To get data for every shot in a single match pass its ID as an arg.  
 ```
 # for https://understat.com/match/9901
