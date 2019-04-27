@@ -7,7 +7,7 @@ To get xG values for every match in a season pass the league ID folowed by seaso
 python season.py EPL 2015
 ```
 League IDs are EPL, La_Liga, Bundesliga, Serie_A, Ligue_1 and RFPL.  
-Available seasons are from 2014 to present.
+Available seasons are 2014 to present.
 
 
 
