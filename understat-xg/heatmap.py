@@ -25,12 +25,12 @@ def get_coordinates(filename):
             if row[result_index] == 'OwnGoal':
                 continue
 
-            x_coordinate = float(row[x_index]) * 100
-            y_coordinate = float(row[y_index]) * 100
+            x = float(row[x_index]) * 100
+            y = float(row[y_index]) * 100
 
             # Change goal line from 100 to 0
-            x_coordinates.append(100 - x_coordinate)
-            y_coordinates.append(100 - y_coordinate)
+            x_coordinates.append(100 - x)
+            y_coordinates.append(100 - y)
 
     return x_coordinates, y_coordinates
 
