@@ -19,7 +19,8 @@ python match.py 9091
 ```
 
 ### Heatmaps
-To produce heatmaps as shown below pass a CSV (such as one produced by match.py) as an arg
+To produce heatmaps as shown below pass a CSV (such as one produced by match.py) as an arg.  
+Penalties and own goals will be excluded.
 ```
 python match.py match_data.csv
 ```
