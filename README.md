@@ -2,7 +2,7 @@
 
 ### Season xG data
 
-To get xG values for every match in a season pass the league ID and year as args.
+To get xG values for every match in a season pass the league ID folowed by season year as args.
 ```
 python season.py EPL 2015
 ```
@@ -12,14 +12,14 @@ Available seasons are from 2014 to present.
 
 
 ### Match xG data
-To get xG values for a single match pass its ID from the URL as an arg.  
+To get data for every shot in a single match pass its ID as an arg.  
 ```
 # for https://understat.com/match/9901
 python match.py 9091
 ```
 
 ### Heatmaps
-To produce heatmaps as shown below pass a CSV as an arg
+To produce heatmaps as shown below pass a CSV (such as one produced by match.py) as an arg
 ```
 python match.py match_data.csv
 ```
