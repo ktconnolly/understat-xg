@@ -15,7 +15,6 @@ To get data for all shots in a single match pass its ID as an argument.
 # for https://understat.com/match/9901
 python match.py 9091
 ```
-Be aware that shots in first half injury time will show as 46, 47 etc rather than 45.
 
 ### Heatmaps
 To create heatmaps pass a CSV produced by match.py as an argument.  
