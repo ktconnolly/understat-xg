@@ -14,13 +14,12 @@ def sim_season(dataframe, iterations):
             home_xg = row['Home xG']
             away_xg = row['Away xG']
 
-            home = 0
-            away = 0
-
             # Calculate prob of home and away winning by 1 to 25 goals
+            home = 0
             for i in range(1, 25):
                 home += skellam.pmf(i, home_xg, away_xg)
 
+            away = 0
             for i in range(-1, -25, -1):
                 away += skellam.pmf(i, home_xg, away_xg)
 
