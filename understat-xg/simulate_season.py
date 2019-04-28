@@ -10,7 +10,7 @@ def sim_season(dataframe, iterations):
         dataframe['Home'].unique().tolist(), 0
     )
 
-    for i in range(iterations):
+    for _ in range(iterations):
         for index, row in dataframe.iterrows():
             h_xg = row['Home xG']
             a_xg = row['Away xG']
