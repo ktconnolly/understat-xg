@@ -18,7 +18,7 @@ python match.py 9091
 
 ### Heatmaps
 
-Using x and y coordinates for 250,000 shots.
+Using 250,000 shots.
 
 ![](figures/all_shots.png)
 ![](figures/head.png)
