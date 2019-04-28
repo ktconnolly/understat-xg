@@ -17,7 +17,7 @@ python match.py 9091
 ```
 
 ### Expected Points
-To calculate expected points for a league give a CSV created by season.py and the number of iterations.
+To calculate expected points for a league use a CSV created by season.py and the number of iterations.
 ```
 python simulate_season.py season.csv 100
 ```
