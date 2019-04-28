@@ -24,13 +24,13 @@ def sim_season(dataframe, iterations):
             # Supremacy of 0 is a draw
             draw = skellam.pmf(0, home_xg, away_xg)
 
-            # Weight contains probabilities of the three outcomes
+            # Calculate match outcome
             result = random.choices(
                 ('Home', 'Draw', 'Away'),
                 weights=[home, draw, away]
             )[0]
 
-            # Add 3 points for win,1 for draw
+            # Add 3 points for win, 1 for draw
             if result == 'Home':
                 d[row.Home] += 3
             elif result == 'Away':
