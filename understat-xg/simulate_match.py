@@ -1,11 +1,10 @@
 import argparse
 import random
-
 import pandas as pd
 import numpy as np
 
 
-def simulate(data_frame):
+def sim_match(data_frame):
     sup = 0
     h_shots = []
     a_shots = []
@@ -59,7 +58,7 @@ def main():
     args = parser.parse_args()
 
     df = pd.read_csv(args.filename)
-    sups = [simulate(df) for _ in range(10000)]
+    sups = [sim_match(df) for _ in range(10000)]
 
     home_win, draw, away_win = results(sups)
     print(f'Average supremacy - {np.mean(sups)}\n'
