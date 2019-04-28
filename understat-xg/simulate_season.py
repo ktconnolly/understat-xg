@@ -53,7 +53,7 @@ def sim_season(dataframe, iterations):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('filename', help='Path to CSV file')
-    parser.add_argument('iterations', help='Path to CSV file', type=int)
+    parser.add_argument('iterations', help='Number of iterations', type=int)
     args = parser.parse_args()
 
     df = pd.read_csv(args.filename)
