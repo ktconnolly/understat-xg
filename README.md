@@ -16,6 +16,13 @@ To get data for all shots in a single match:
 python match.py 9091
 ```
 
+### Expected Points
+To calculate expected points for a league use a CSV created by season.py and the number of iterations.
+```
+python simulate_season.py season.csv 100
+```
+
+
 ### Heatmaps
 
 Using 250,000 shots.
