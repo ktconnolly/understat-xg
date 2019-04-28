@@ -27,9 +27,10 @@ def sim_season(dataframe, iterations):
             draw = skellam.pmf(0, home_xg, away_xg)
 
             # Weight contains probabilities of the three outcomes
-            weights = [home, draw, away]
-            result = random.choices(('Home', 'Draw', 'Away'),
-                                    weights=weights)[0]
+            result = random.choices(
+                ('Home', 'Draw', 'Away'),
+                weights=[home, draw, away]
+            )[0]
 
             # Add 3 points for win,1 for draw
             if result == 'Home':
