@@ -17,13 +17,8 @@ python match.py 9091
 ```
 
 ### Heatmaps
-To create heatmaps using a CSV produced by match.py:  
-```
-python heatmap.py match_data.csv
-```
-Penalties and own goals will be excluded.
 
-Below are examples using 250,000 shots.
+Using 250,000 shots.
 
 ![](figures/all_shots.png)
 ![](figures/head.png)
