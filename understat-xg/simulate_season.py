@@ -44,7 +44,7 @@ def sim_season(dataframe, iterations):
     d.update((team, pts / iterations) for team, pts in d.items())
 
     # Create a list sorted by points
-    points = sorted(((key, value) for (value, key) in d.items()), reverse=True)
+    points = sorted(d.items(), key=lambda x: x[1], reverse=True)
 
     return points
 
@@ -59,7 +59,7 @@ def main():
     points = sim_season(df, args.iterations)
 
     for team in points:
-        print(f'{team[1]} - {team[0]}')
+        print(f'{team[0]} - {team[1]}')
 
 
 if __name__ == '__main__':
