@@ -11,28 +11,28 @@ def get_coordinates(filename):
         header = next(shots_data)
 
         # Get column numbers from header
-        x_index = header.index('X Coordinate')
-        y_index = header.index('Y Coordinate')
-        situation_index = header.index('Situation')
-        result_index = header.index('Result')
+        x = header.index('X Coordinate')
+        y = header.index('Y Coordinate')
+        situation = header.index('Situation')
+        result = header.index('Result')
 
-        x_coordinates = []
-        y_coordinates = []
+        x_coords = []
+        y_coords = []
         for row in shots_data:
-            if row[situation_index] == 'Penalty':
+            if row[situation] == 'Penalty':
                 continue
 
-            if row[result_index] == 'OwnGoal':
+            if row[result] == 'OwnGoal':
                 continue
 
-            x = float(row[x_index]) * 100
-            y = float(row[y_index]) * 100
+            x_coord = float(row[x]) * 100
+            y_coord = float(row[y]) * 100
 
             # Change goal line from 100 to 0
-            x_coordinates.append(100 - x)
-            y_coordinates.append(100 - y)
+            x_coords.append(100 - x_coord)
+            y_coords.append(100 - y_coord)
 
-    return x_coordinates, y_coordinates
+    return x_coords, y_coords
 
 
 def create_heatmap(x_coordinates, y_coordinates):
