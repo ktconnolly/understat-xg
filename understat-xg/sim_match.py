@@ -6,15 +6,7 @@ import numpy as np
 
 def sim_match(data_frame):
     sup = 0
-    h_shots = []
-    a_shots = []
-
     for index, row in data_frame.iterrows():
-        if row['Team'] == row['Home']:
-            h_shots.append(row['xG'])
-        else:
-            a_shots.append(row['xG'])
-
         if row['Result'] == 'OwnGoal':
             continue
 
@@ -60,11 +52,11 @@ def main():
     df = pd.read_csv(args.filename)
     sups = [sim_match(df) for _ in range(10000)]
 
-    home_win, draw, away_win = results(sups)
+    h_win, draw, a_win = results(sups)
     print(f'Average supremacy - {np.mean(sups)}\n'
-          f'Home wins - {home_win:.1%}\n'
+          f'Home wins - {h_win:.1%}\n'
           f'Draws - {draw:.1%}\n'
-          f'Away wins - {away_win:.1%}\n')
+          f'Away wins - {a_win:.1%}\n')
 
 
 if __name__ == '__main__':
