@@ -12,23 +12,26 @@ def sim_season(dataframe, iterations):
 
     for i in range(iterations):
         for index, row in dataframe.iterrows():
-            home_xg = row['Home xG']
-            away_xg = row['Away xG']
+            h_xg = row['Home xG']
+            a_xg = row['Away xG']
 
-            # Calculate prob of home and away winning by 1 to 10 goals
-            home = 0
-            away = 0
-            for sup in range(1, 10):
-                home += skellam.pmf(sup, home_xg, away_xg)
-                away += skellam.pmf(-sup, home_xg, away_xg)
+            # Calculate prob of home winning by 1-10 goals
+            h_win = sum(
+                [skellam.pmf(sup, h_xg, a_xg) for sup in range(1, 10)]
+            )
+
+            # Calculate prob of away winning by 1-10 goals
+            a_win = sum(
+                [skellam.pmf(-sup, h_xg, a_xg) for sup in range(1, 10)]
+            )
 
             # Supremacy of 0 is a draw
-            draw = skellam.pmf(0, home_xg, away_xg)
+            draw = skellam.pmf(0, h_xg, a_xg)
 
             # Calculate match outcome
             result = random.choices(
                 ('Home', 'Draw', 'Away'),
-                weights=[home, draw, away]
+                weights=[h_win, draw, a_win]
             )[0]
 
             # Add 3 points for win, 1 for draw
