@@ -16,12 +16,10 @@ def sim_season(dataframe, iterations):
 
             # Calculate prob of home and away winning by 1 to 10 goals
             home = 0
-            for i in range(1, 10):
-                home += skellam.pmf(i, home_xg, away_xg)
-
             away = 0
-            for i in range(-1, -10, -1):
-                away += skellam.pmf(i, home_xg, away_xg)
+            for sup in range(1, 10):
+                home += skellam.pmf(sup, home_xg, away_xg)
+                away += skellam.pmf(-sup, home_xg, away_xg)
 
             # Supremacy of 0 is a draw
             draw = skellam.pmf(0, home_xg, away_xg)
