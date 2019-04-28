@@ -17,7 +17,7 @@ python match.py 9091
 ```
 
 ### Heatmaps
-To create heatmaps using a CSV produced by match.py:  
+To create heatmaps:  
 ```
 python heatmap.py match_data.csv
 ```
