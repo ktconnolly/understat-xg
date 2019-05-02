@@ -42,14 +42,18 @@ def main():
     parser.add_argument('filename', help='Path to CSV file')
     args = parser.parse_args()
 
+    print('Running...')
+
     df = pd.read_csv(args.filename)
-    sups = [sim_match(df) for _ in range(10000)]
+    sups = [sim_match(df) for _ in range(1000)]
 
     h_win, draw, a_win = results(sups)
-    print(f'Average supremacy - {np.mean(sups)}\n'
-          f'Home wins - {h_win:.1%}\n'
-          f'Draws - {draw:.1%}\n'
-          f'Away wins - {a_win:.1%}\n')
+    print(
+        f'Average supremacy - {np.mean(sups)}\n'
+        f'Home wins - {h_win:.1%}\n'
+        f'Draws - {draw:.1%}\n'
+        f'Away wins - {a_win:.1%}\n'
+    )
 
 
 if __name__ == '__main__':
