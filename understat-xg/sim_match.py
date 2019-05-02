@@ -10,20 +10,13 @@ def sim_match(data_frame):
         if row['Result'] == 'OwnGoal':
             continue
 
-        if check_goal(row['xG']):
+        if random.random() < row['xG']:
             if row['Team'] == row['Home']:
                 sup += 1
             else:
                 sup -= 1
 
     return sup
-
-
-def check_goal(xg):
-    if random.random() <= float(xg):
-        return True
-    else:
-        return False
 
 
 def results(supremacies):
