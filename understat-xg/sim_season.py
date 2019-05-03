@@ -5,7 +5,8 @@ from scipy.stats import skellam
 
 
 def sim_season(dataframe, iterations):
-    # Create dict containing teams as keys and points (initially 0) as values
+    
+    # Team names as keys and points (initially 0) as values
     d = dict.fromkeys(
         dataframe['Home'].unique().tolist(), 0
     )
