@@ -46,7 +46,7 @@ def sim_season(dataframe, iterations):
     # Update dict with average points rather than total
     d.update((team, pts / iterations) for team, pts in d.items())
 
-    # Create a list sorted by points
+    # Create a list containing (team, points) tuples sorted by points
     points_sorted = sorted(d.items(), key=lambda x: x[1], reverse=True)
 
     return points_sorted
@@ -59,10 +59,10 @@ def main():
     args = parser.parse_args()
 
     df = pd.read_csv(args.filename)
-    points = sim_season(df, args.iterations)
+    season_points = sim_season(df, args.iterations)
 
-    for team in points:
-        print(f'{team[0]} - {team[1]:.1f}')
+    for team, points in season_points:
+        print(f'{team} - {points:.1f}')
 
 
 if __name__ == '__main__':

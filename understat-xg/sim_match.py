@@ -20,7 +20,7 @@ def sim_match(data_frame):
 
 
 def results(supremacies):
-    home_wins, draws, away_wins = 0, 0, 0
+    home_wins = draws = away_wins = 0
 
     for result in supremacies:
         if result > 0:
@@ -48,6 +48,7 @@ def main():
     sups = [sim_match(df) for _ in range(1000)]
 
     h_win, draw, a_win = results(sups)
+
     print(
         f'Average supremacy - {np.mean(sups)}\n'
         f'Home wins - {h_win:.1%}\n'

@@ -66,8 +66,8 @@ def main():
     parser.add_argument('filename', help='Path to CSV file')
     args = parser.parse_args()
 
-    x, y = get_coordinates(args.filename)
-    create_heatmap(x, y)
+    coordinates = get_coordinates(args.filename)
+    create_heatmap(*coordinates)
 
 
 if __name__ == '__main__':
