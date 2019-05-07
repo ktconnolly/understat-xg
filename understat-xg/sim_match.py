@@ -20,7 +20,9 @@ def sim_match(data_frame):
 
 
 def results(supremacies):
-    home_wins = draws = away_wins = 0
+    home_wins = 0
+    draws = 0
+    away_wins = 0
 
     for result in supremacies:
         if result > 0:
