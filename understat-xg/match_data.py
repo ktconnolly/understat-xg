@@ -80,10 +80,7 @@ def convert_apostrophe(string):
     if string is None:
         return None
 
-    if '&#039;' in string:
-        return string.replace('&#039;', "'")
-    else:
-        return string
+    return string.replace('&#039;', "'")
 
 
 def main():
